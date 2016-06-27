@@ -1,0 +1,32 @@
+Data Structures in Java
+
+1. You cannot call a sort method on an ArrayList.
+
+2. Some of the key collection classes are:
+	
+	TreeSet
+		Keeps the elements sorted and prevents duplicates
+
+	HashMap
+		Let's you store and access elements as name/value pairs
+
+	LinkedList
+		Designed to give better performance when you insert or delete 
+		elements from the middle of the collection
+
+	HashSet
+		Prevents duplicates in the collection, and given an element, can 
+		find that element in the collection quickly
+
+	LinkedHashMap
+		Like a regular HashMap, except it can remember the order in which 
+		elements (name/value pairs) were inserted, or it can be configured 
+		to remember the order in which elements were last accessed
+		
+3. Every time you insert into a TreeSet, the TreeSet has to take the time 
+   to figure out where in the tree the new element must go, so it is expensive
+
+4. It's slower to insert something in an ArrayList somewhere other than at 
+   the end. So using the overloaded add(index, element) method doesn't work
+   as quickly as calling the add(element) - which puts the added element at
+   the end

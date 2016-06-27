@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class JukeBoxV1 {
 
@@ -19,6 +20,8 @@ public class JukeBoxV1 {
 	// load the file and print the contents in songList ArrayList
 	public void go() {
 		getSongs();
+		System.out.println(songsList);
+		Collections.sort(songsList);
 		System.out.println(songsList);
 	}
 	
@@ -44,12 +47,7 @@ public class JukeBoxV1 {
 	
 	// break line into two tokens and store song name in array list
 	public void addSong(String lineToParse) {
-		System.out.println("Line : " + lineToParse);
 		String[] tokens = lineToParse.split("/");
-		for (String token : tokens) {
-			System.out.println("# " + token);
-		}
-		System.out.println();
 		songsList.add(tokens[0]);
 	}
 
