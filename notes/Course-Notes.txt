@@ -30,3 +30,57 @@ Data Structures in Java
    the end. So using the overloaded add(index, element) method doesn't work
    as quickly as calling the add(element) - which puts the added element at
    the end
+
+5. With generics, you can create type-safe collections where more problems
+   are caught at compile-time instead of runtime
+
+6. In generics, 'E' is a stand-in for "the type of element you want this 
+   collection to hold and return"
+
+7. A 'generic class' means that the class declaration includes a type parameter.
+   A 'generic method' means that the method declaration uses a type parameter in
+   its signature
+
+8. We can use type parameters in a method in several different ways:
+
+	i. Using a type parameter defined in the class declaration
+
+		public class ArrayList<E> extends AbstractList<E> ... {
+			public boolean add(E 0) {
+				...
+			}
+		}
+
+		We can use the 'E' here ONLY because it's already been defined as
+		part of the class
+
+	ii. Using a type parameter that was NOT defined in the class declaration
+
+		public <T extends Animal> void takeThing(ArrayList<T> list)
+
+		Here, we can use <T> because we declared 'T' earlier in the method
+		declaration - before the return type. This method says that T can be
+		"any type of Animal"
+
+9. public <T extends Animal> void takeThing(ArrayList<T> list)
+
+				is not the same as
+				
+   public void takeThing(ArrayList<Animal> list)
+
+   Explanation:
+   		The first one, where <T extends Animal> is part of the method
+   	declaration, means that any ArrayList declared of a type that is
+   	Animal or one of Animal's subtypes (like Dog or Cat), is legal. So,
+   	we can invoke the top method using an ArrayList<Dog>, ArrayList<Cat>,
+   	or ArrayList<Animal>
+
+   		The second one, where the method argument is (ArrayList<Animal> list)
+   	means that only an ArrayList<Animal> is legal. In other words, while
+   	the first version takes an ArrayList of 'any' type that is a type of 
+   	Animal (Animal, Dog, Cat, etc.), the second version takes 'only' an ArrayList
+   	of type Animal. Not ArrayList<Dog>, or ArrayList<Cat> but only 
+   	ArrayList<Animal>
+
+9. In generics, the keyword "extends" really means "is-a", and works for BOTH
+   classes and interfaces
