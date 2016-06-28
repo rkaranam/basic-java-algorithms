@@ -84,3 +84,31 @@ Data Structures in Java
 
 9. In generics, the keyword "extends" really means "is-a", and works for BOTH
    classes and interfaces
+
+10. Comparable interface (java.lang.Comparable) has only one method to implement:
+	
+		public interface Comparable<T> {
+			int compareTo(T obj);
+		}
+
+		Returns
+			a negative integer - when this object is less than the specified object
+			              zero - when this object is equal to the specified object	
+			a positive integer - when this object is greater than the specified obj
+
+11. An element in a list can compare itself to another of its own type in only one
+    way, using its compareTo() method.
+
+12. Comparator is external to the element type you're comparing - it's a separate class
+
+13. If you pass a Comparator to the sort() method, the sort order is determined by 
+    the Comparator rather than the element's own compareTo() method
+
+14. Invoking the one-argument sort(List o) method means the list element's compareTo()
+    method determines the order. So the elements in the list MUST implement the 
+    Comparable interface
+
+15. Invoking sort(List o, Comparator c) means the list element's compareTo() method
+    will NOT be called, and the Comparator's compare() method will be used instead.
+    That means the elements in the list do NOT need to implement the Comparable interface
+

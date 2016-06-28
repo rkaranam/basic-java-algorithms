@@ -29,7 +29,7 @@ public class Song implements Comparable<Song> {
 	
 	@Override
 	public String toString() {
-		return title;
+		return title + ": " + artist;
 	}
 
 	@Override
